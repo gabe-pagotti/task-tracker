@@ -22,6 +22,10 @@ export default {
     },
     methods: {
         deleteTask(id) {
+            if (! confirm('Are you sure about that?')) {
+                return;
+            }
+
             this.tasks = this.tasks.filter((task) => task.id !== id);
         }
     },
